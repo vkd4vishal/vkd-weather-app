@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<title>PMEC | CSE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Times New Roman", serif;}
+body, html {
+  height: 100%;
+  color: rgb(170, 220, 233);
+  line-height: 1.8;
+}
+
+</style>
+<script>
+    var isRealString = () => {
+        var str = document.forms["formname"]["City"].value;
+        if (!str) {
+            alert('Location can not be empty');
+            return false;
+        }
+        if (typeof str == 'string' && str.trim().length > 0 && !(/^\d+$/.test(str)))
+            return true;
+        alert('Location must contain alphabets...');
+        return false;
+    };
+</script>
+<style>
+body {
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+overflow: hidden;
+background-color: #333;
+}
+
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+.topnav a.active {
+background-color: #4CAF50;
+color: white;
+}
+</style>
+<body background="./images/index.jpg" >
+
+    <div class="topnav">
+        <a class="active" href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+      </div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">About Us</h3>
+ 
+   <pre>         The VKD WEATHER  Company specializes in weather forecasting and visualization. Back in 2011,
+         we had the crazy idea that robots could predict the  weather with down-to-the-minute precision, and 
+         thanks to a handful  of generous strangers, we were able to give it a shot. Since then,those robots
+         have become "scarily accurate," powering our own award-winning weather app,VKD WEATHER, in addition
+         to thousands of other businesses, apps, and crazy ideas.
+
+         For a software startup, we’re a bit unusual: we’re self-funded, have been profitable from the start,
+         and funnel a lot of our efforts into researching new ways to do what we do. Although we’re no longer
+         a two-man operation—having partnered with a company called Applied  Invention and grown our team—our
+         focus has always been on sustainability over growth, and we plan to keep it that way.
+
+         If you have any questions about us, our app, or about the weather in general, please feel free to drop
+          us a line: we’d love to hear from you.
+ 
+         Vishal Kumar and the VKD WEATHER Team 
+         Varanasi, Uttar Pradesh</pre>
+  <div class="Aw3-row">
+    <div class="Aw3-col m6 w3-center w3-padding-large">
+      
+      <img src="./images/darkskylogo.png" class="Aw3-round w3-image w3-opacity w3-hover-opacity-off"  width="100" height="60">
+    </div>
+
+   
+
+</div>
+
+</body>
+</html>

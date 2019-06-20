@@ -1,0 +1,163 @@
+<html>
+
+<head>
+    <script>
+        var isRealString = () => {
+            var str = document.forms["formname"]["City"].value;
+            if (!str) {
+                alert('Location can not be empty');
+                return false;
+            }
+            if (typeof str == 'string' && str.trim().length > 0 && !(/^\d+$/.test(str)))
+                return true;
+            alert('Location must contain alphabets...');
+            return false;
+        };
+    </script>
+    <style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+
+
+<body background={{{hback}}}>
+    <div style="float: right;">
+         <h2>
+            
+            <font color="sky blue">{{date}}</font><br>
+            <font color="yellow">{{day}}</font>
+        </h2>
+    </div>
+    <div class="topnav">
+            <a class="active" href={{{home}}}>Home</a>
+            <a href={{{about}}}>About</a>
+          </div>
+
+    <span>
+
+        <h1>
+            <font color="Cantaloupe">{{temp}}<sup>°</sup> C</font>
+            <font color="dark green">{{summary}}</font>
+        </h1>
+
+
+    </span>
+    <img src={{{hur}}} width="150" height="100" style="border-radius:23px;float:left">
+    <center>
+<div class="centered-form" style="align-items:center;height:100;width:100vw;justify-content:center;">
+
+        <div class="centered-form__form"
+            style="background:rgba(24, 3, 59, 0.9);border:1px solid #e1e1e1;border-radius:5px;padding:0 20px;margin:20px;width:200px">
+            <form action="./../views/about" name="formname" onsubmit="return isRealString()">
+                <div class="form-field" style="margin:20px 0;width:100%">
+                    <h3>
+                        <font color="silver">View Another Location</font>
+                    </h3>
+
+                </div>
+                <div class="form-field">
+                    <input type="text" name="City" autofocus autocomplete="off" />
+
+                </div>
+                <div class="form-field">
+                    <button
+                        style=" border: none;size:30px; color: rgb(220, 236, 234); padding: 10px ;background: #1c12a8; cursor: pointer; transition: background .3s ease">View
+                        Weather</button>
+
+                </div>
+
+            </form>
+
+
+
+
+        </div>
+
+    </div>
+    </center>
+            
+    
+    <br>
+    <h3>
+        <font color="#00FFF3">{{hourly_summary}}</font>
+    </h3>
+    <h3>
+        <font color="orange">Location: {{add}}</font>
+    </h3>
+    <div>
+        
+        <div>
+            <h2 style="position: absolute;top:320px;left:590px">
+                <font color="#D61FCE">Map of {{query}}</font>
+            </h2>
+            
+            <img src={{{tile}}} width="450" height="300" style="position:absolute;top:367px;left:500px;border-radius:15px;border: 10px solid rgb(52, 49, 224);
+ ">
+        </div>
+        <div>
+
+            <h3>
+                <font color="#E9EA9A">Feels like: </font>
+                <font color="#8FFF00">{{itfeels}}</font>
+                <font color="silver"><sup>°</sup> C</font>
+            </h3>
+            <h3>
+                <font color="#E9EA9A">Low: </font>
+                <font color="#8FFF00">{{temperatureMin}}</font>
+                <font color="silver"><sup>°</sup> C</font>
+            </h3>
+            <h3>
+                <font color="#E9EA9A">High: </font>
+                <font color="#8FFF00">{{temperatureMax}}</font>
+                <font color="silver"><sup>°</sup> C</font>
+            </h3>
+            <h3>
+                <font color="#E9EA9A">Wind Speed: </font>
+                <font color="#8FFF00">{{windSpeed}}</font>
+                <font color="silver">km/hr</font>
+            </h3>
+            <div>
+                <form action={{{more}}} target="_blank">
+   <button type="submit"
+                    style=" top:800px;border: none;size:30px; color: rgb(220, 236, 234); padding: 10px ;background: #dd2b99; cursor: pointer; transition: background .3s ease">More</button>
+</form>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

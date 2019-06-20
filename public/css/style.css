@@ -1,0 +1,8 @@
+button,button:hover{border:none;color:rgb(220, 236, 234);padding:10px}
+h3{font-weight:600;text-align:center;font-size:1.5rem}button{background:#22066e;cursor:pointer;transition:background .3s ease}
+button:hover{background:#1F4C69}
+button:disabled{cursor:default;background:#698ea5}
+.centered-form{display:flex;align-items:center;height:100;width:100vw;justify-content:center;}
+.centered-form__form{background:rgba(165, 151, 247, 0.9);border:1px solid #e1e1e1;border-radius:5px;padding:0 20px;margin:20px;width:230px}.form-field{margin:20px 0}.form-field>*{width:100%}
+
+
