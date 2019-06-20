@@ -85,7 +85,8 @@ app.get('/views/about', (req, res) => {
               hur = '"http://vkd-weather-app.herokuapp.com/images/clear.jpg"';
           }
 
-          
+          console.log(day);
+          console.log(date);
           //http://api.timezonedb.com/v2.1/get-time-zone?key=01SC9YTB0ADJ&format=json&by=position&lat=48.8566969&lng=2.3514616
           var more = `"http://darksky.net/forecast/${results.Latitude},${results.Longitude}/us12/en"`;
           var tile = `"https://image.maps.api.here.com/mia/1.6/mapview?app_id=${process.env.appid}&app_code=${process.env.appcode}&c=${results.Latitude},${results.Longitude}&u=7k&h=400&w=600"`;
