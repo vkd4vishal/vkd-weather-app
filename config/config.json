@@ -1,0 +1,16 @@
+{
+    "development":{
+      "lockey": "80c49eeea0aed6",
+      "weathkey":"409cf90712db265f2398d55b5c4fb906",
+      "appid":"uNKHM9AMC5HlIFqK25kI",
+      "appcode": "JnuHlBC50JqgNf8Rpv-Bsw",
+      "timekey": "01SC9YTB0ADJ"
+    },
+    "production":{
+      "lockey": "80c49eeea0aed6",
+      "weathkey":"409cf90712db265f2398d55b5c4fb906",
+      "appid":"uNKHM9AMC5HlIFqK25kI",
+      "appcode": "JnuHlBC50JqgNf8Rpv-Bsw",
+      "timekey": "01SC9YTB0ADJ"
+    }
+}
