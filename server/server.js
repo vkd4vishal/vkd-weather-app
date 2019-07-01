@@ -47,12 +47,13 @@ app.get('/views/about', (req, res) => {
           const temperatureMin = Math.trunc((weather_results.temperatureMin - 32) * (5 / 9));
           const temperatureMax = Math.trunc((weather_results.temperatureMax - 32) * (5 / 9)); 
           const hourly_summary = weather_results.hourly_summary;
-         
+          var logo2='';
           var hur = '';
           var hback = '';
           var home='';
           var about='';
           if (port == 3000) {
+            logo2='"http://localhost:3000/images/logo-2.png"';
             hback = '"http://localhost:3000/images/index.jpg"';
             home='"http://localhost:3000/index.html"';
             about='"http://localhost:3000/about.html"';
@@ -69,6 +70,7 @@ app.get('/views/about', (req, res) => {
           }
           else {
             hback = '"http://vkd-weather-app.herokuapp.com/images/index.jpg"';
+            logo2='"http://vkd-weather-app.herokuapp.com/images/logo-2.png"';
             home='"http://vkd-weather-app.herokuapp.com/index.html"';
             about='"http://vkd-weather-app.herokuapp.com/about.html"';
             if (summary.match(/Cloud/))
@@ -89,7 +91,7 @@ app.get('/views/about', (req, res) => {
           
           var more = `"http://darksky.net/forecast/${results.Latitude},${results.Longitude}/us12/en"`;
           var tile = `'https://image.maps.api.here.com/mia/1.6/mapview?app_id=${process.env.appid}&app_code=${process.env.appcode}&c=${results.Latitude},${results.Longitude}&u=7k&h=700&w=1000&t=3'`;
-          res.render('weath.hbs', { add, temp, itfeels,day, summary,about,home, hur, hback, more, tile,query,windSpeed,temperatureMax,temperatureMin,hourly_summary,date });
+          res.render('weath.hbs', { add, temp, itfeels,day, logo2,summary,about,home, hur, hback, more, tile,query,windSpeed,temperatureMax,temperatureMin,hourly_summary,date });
 
 
         }
