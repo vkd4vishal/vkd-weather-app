@@ -88,8 +88,8 @@ app.get('/views/about', (req, res) => {
          
           
           var more = `"http://darksky.net/forecast/${results.Latitude},${results.Longitude}/us12/en"`;
-          var tile = `"https://image.maps.api.here.com/mia/1.6/mapview?app_id=${process.env.appid}&app_code=${process.env.appcode}&c=${results.Latitude},${results.Longitude}&u=7k&h=400&w=600"`;
-          res.render('about.hbs', { add, temp, itfeels,day, summary,about,home, hur, hback, more, tile,query,windSpeed,temperatureMax,temperatureMin,hourly_summary,date });
+          var tile = `'https://image.maps.api.here.com/mia/1.6/mapview?app_id=${process.env.appid}&app_code=${process.env.appcode}&c=${results.Latitude},${results.Longitude}&u=7k&h=700&w=1000&t=3'`;
+          res.render('weath.hbs', { add, temp, itfeels,day, summary,about,home, hur, hback, more, tile,query,windSpeed,temperatureMax,temperatureMin,hourly_summary,date });
 
 
         }
