@@ -21,18 +21,18 @@ app.get('/views/about', (req, res) => {
       res.render('failed.hbs', { message: errormessage });
     }
     else {
-      var date='';
-      var day='';
-      time.getTime(results.Latitude,results.Longitude,(errormessage,time_results)=>{
-          if(errormessage){
-            date='Could not get time'
-          }else{
-            date=time_results.formatted;
-            day=moment(date).format('LL')
-            date=moment(date).format('hh:mm:a');
-          }
+      var date = '';
+      var day = '';
+      time.getTime(results.Latitude, results.Longitude, (errormessage, time_results) => {
+        if (errormessage) {
+          date = 'Could not get time'
+        } else {
+          date = time_results.formatted;
+          day = moment(date).format('LL')
+          date = moment(date).format('hh:mm:a');
+        }
       })
-        
+
       weather.getWeather(results.Latitude, results.Longitude, (errormessage, weather_results) => {
         if (errormessage) {
           res.render('failed.hbs', { message: errormessage });
@@ -45,18 +45,18 @@ app.get('/views/about', (req, res) => {
           const summary = weather_results.summary;
           const windSpeed = weather_results.windSpeed;
           const temperatureMin = Math.trunc((weather_results.temperatureMin - 32) * (5 / 9));
-          const temperatureMax = Math.trunc((weather_results.temperatureMax - 32) * (5 / 9)); 
+          const temperatureMax = Math.trunc((weather_results.temperatureMax - 32) * (5 / 9));
           const hourly_summary = weather_results.hourly_summary;
-          var logo2='';
+          var logo2 = '';
           var hur = '';
           var hback = '';
-          var home='';
-          var about='';
+          var home = '';
+          var about = '';
           if (port == 3000) {
-            logo2='"http://localhost:3000/images/logo-2.png"';
+            logo2 = '"http://localhost:3000/images/logo-2.png"';
             hback = '"http://localhost:3000/images/index.jpg"';
-            home='"http://localhost:3000/index.html"';
-            about='"http://localhost:3000/about.html"';
+            home = '"http://localhost:3000/index.html"';
+            about = '"http://localhost:3000/about.html"';
             if (summary.match(/Cloud/))
               hur = '"http://localhost:3000/images/cloudy.gif"';
             else if (summary.match(/Clear/g))
@@ -70,9 +70,9 @@ app.get('/views/about', (req, res) => {
           }
           else {
             hback = '"http://vkd-weather-app.herokuapp.com/images/index.jpg"';
-            logo2='"http://vkd-weather-app.herokuapp.com/images/logo-2.png"';
-            home='"http://vkd-weather-app.herokuapp.com/index.html"';
-            about='"http://vkd-weather-app.herokuapp.com/about.html"';
+            logo2 = '"http://vkd-weather-app.herokuapp.com/images/logo-2.png"';
+            home = '"http://vkd-weather-app.herokuapp.com/index.html"';
+            about = '"http://vkd-weather-app.herokuapp.com/about.html"';
             if (summary.match(/Cloud/))
               hur = '"http://vkd-weather-app.herokuapp.com/images/cloudy.gif"';
             else if (summary.match(/Clear/g))
@@ -87,11 +87,11 @@ app.get('/views/about', (req, res) => {
               hur = '"http://vkd-weather-app.herokuapp.com/images/clear.jpg"';
           }
 
-         
-          
+
+
           var more = `"http://darksky.net/forecast/${results.Latitude},${results.Longitude}/us12/en"`;
           var tile = `'https://image.maps.api.here.com/mia/1.6/mapview?app_id=${process.env.appid}&app_code=${process.env.appcode}&c=${results.Latitude},${results.Longitude}&u=7k&h=700&w=1000&t=3'`;
-          res.render('weath.hbs', { add, temp, itfeels,day, logo2,summary,about,home, hur, hback, more, tile,query,windSpeed,temperatureMax,temperatureMin,hourly_summary,date });
+          res.render('weath.hbs', { add, temp, itfeels, day, logo2, summary, about, home, hur, hback, more, tile, query, windSpeed, temperatureMax, temperatureMin, hourly_summary, date });
 
 
         }
